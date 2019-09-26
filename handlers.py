@@ -3,7 +3,7 @@ from message import *
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-STARTS = range(1)
+START, KATO = range(2)
 
 
 def start(update, context):
@@ -17,13 +17,15 @@ def start(update, context):
     context.bot.send_document(chat_id, text)
     context.bot.send_message(chat_id, text2, reply_markup=reply_markup, parse_mode='html')
     context.bot.send_message(chat_id, name)
-    return STARTS
+
+    return KATO
 
 
-
-def starts(update, context):
+def kato(update, context):
     update.message.reply_text(main_menu_message(),
                               reply_markup=main_menu_keyboard())
+
+    return START
 
 
 def main_menu_keyboard():

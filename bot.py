@@ -23,7 +23,9 @@ def main():
         entry_points=[CommandHandler('start', start)],
 
         states={
-            STARTS: [MessageHandler(Filters.regex('^(Kategoriler|/start)$'), starts)],
+            START: [MessageHandler(Filters.regex('^(/start)$'), start)],
+
+            KATO: [MessageHandler(Filters.regex('^(Kategoriler)$'), kato)],
 
 
 
